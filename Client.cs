@@ -6,7 +6,7 @@ namespace MRIdentityClient
 {
     public class IdentityClient
     {
-        public readonly Navigator Navigator = new Navigator();
+        public readonly Navigator Navigator;
         public readonly string Secret;
 
         public SignupNode Signup { get; set; }
@@ -14,6 +14,7 @@ namespace MRIdentityClient
         protected IdentityClient()
         {
             Signup = new SignupNode(this);
+            Navigator = new Navigator(Secret);
         }
 
         public IdentityClient(string secret) : this()

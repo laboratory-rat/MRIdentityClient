@@ -6,6 +6,7 @@ namespace MRIdentityClient.Node
     {
         protected readonly IdentityClient _client;
         protected Navigator _navigator => _client?.Navigator;
+        protected RequestSender _http => new RequestSender();
 
         public BaseNode(IdentityClient client)
         {

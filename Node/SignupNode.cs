@@ -9,8 +9,6 @@ namespace MRIdentityClient.Node
         public SignupNode(IdentityClient client) : base(client) { }
 
         public async Task<IdentityResponse<ApproveLogin>> ApproveLogin(string token)
-        {
-            return null;
-        }
+            => await _http.Put<ApproveLogin>(_navigator.ApproveLogin(token));
     }
 }

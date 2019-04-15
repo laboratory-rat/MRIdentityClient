@@ -11,15 +11,14 @@ namespace MRIdentityClient
 
         public SignupNode Signup { get; set; }
 
-        protected IdentityClient()
-        {
-            Signup = new SignupNode(this);
-            Navigator = new Navigator(Secret);
-        }
+        protected IdentityClient() : this(string.Empty) { }
 
-        public IdentityClient(string secret) : this()
+        public IdentityClient(string secret)
         {
             Secret = secret;
+            Navigator = new Navigator(Secret);
+
+            Signup = new SignupNode(this);
         }
     }
 }

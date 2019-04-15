@@ -20,7 +20,7 @@ namespace MRIdentityClient.Tools
         public async Task<IdentityResponse<T>> Put<T>(string url, object data = null)
             where T : class, new()
         {
-            var content = data == null ? JsonConvert.SerializeObject(data, _settings) : string.Empty;
+            var content = data != null ? JsonConvert.SerializeObject(data, _settings) : string.Empty;
             var result = new IdentityResponse<T>();
 
             var response = await _client.PutAsync(url, new StringContent(content));

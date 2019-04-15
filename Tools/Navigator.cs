@@ -9,7 +9,7 @@
             _fingerprint = fingerprint;
         }
 
-        const string BASE = "http://identity.madrat.studio";
+        const string BASE = "http://api.identity.madrat.studio";
         public string ApproveLogin(string token) => $"{BASE}/login/provider/approve?token={token}&fingerprint={_fingerprint}";
     }
 }

@@ -8,7 +8,7 @@ namespace MRIdentityClient.Response
     {
         public bool Success { get; set; }
 
-        public ApiOkResult() : this(false) { }
+        public ApiOkResult() : this(true) { }
         public ApiOkResult(bool result)
         {
             Success = result;
